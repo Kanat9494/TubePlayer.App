@@ -50,4 +50,15 @@
 		<PackageReference Include="MonkeyCache.FileStore" Version="1.6.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Helpers\" />
+	  <Folder Include="IServices\" />
+	  <Folder Include="Models\" />
+	  <Folder Include="IViews\" />
+	  <Folder Include="ViewControls\" />
+	  <Folder Include="ViewModels\Base\" />
+	  <Folder Include="Services\" />
+	  <Folder Include="Views\Base\" />
+	</ItemGroup>
+
 </Project>
