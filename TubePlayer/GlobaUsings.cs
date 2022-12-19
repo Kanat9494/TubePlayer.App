@@ -12,5 +12,11 @@ global using Microsoft.Extensions.Logging;
 global using Microsoft.Maui.LifecycleEvents;
 global using MonkeyCache.FileStore;
 global using TubePlayer.Services;
+global using TubePlayer.ViewModels.Base;
+global using TubePlayer.ViewModels;
+global using TubePlayer.Helpers;
+global using TubePlayer.Views.Base;
+
+
 
 

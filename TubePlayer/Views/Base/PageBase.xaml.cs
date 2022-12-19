@@ -1,18 +1,16 @@
-namespace TubePlayer.ViewModels.Base;
+namespace TubePlayer.Views.Base;
 
 public partial class PageBase : ContentPage
 {
-	public IList<Microsoft.Maui.IView> PageContent => PageContentGrid.Children;
+    public IList<Microsoft.Maui.IView> PageContent => PageContentGrid.Children;
     public IList<Microsoft.Maui.IView> PageIcons => PageIconsGrid.Children;
 
-    
+    protected bool IsBackButtonEnabled
+    {
+        set => NavigateBackButton.IsEnabled = value;
+    }
 
-	protected bool IsBackButtonEnabled
-	{
-		set => NavigateBackButton.IsEnabled = value;
-	}
-
-#region Bindable properties
+    #region Bindable properties
     public static readonly BindableProperty PageTitleProperty = BindableProperty.Create(
         nameof(PageTitle),
         typeof(string),
@@ -118,7 +116,7 @@ public partial class PageBase : ContentPage
                 break;
         }
     }
-#endregion
+    #endregion
 
     public PageBase()
     {

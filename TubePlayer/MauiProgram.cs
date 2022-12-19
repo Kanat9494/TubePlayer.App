@@ -1,5 +1,4 @@
-﻿
-namespace TubePlayer;
+﻿namespace TubePlayer;
 
 public static class MauiProgram
 {
@@ -29,7 +28,7 @@ public static class MauiProgram
 #endif
             });
 
-        //RegisterAppServices(builder.Services);
+        RegisterAppServices(builder.Services);
 
 #if DEBUG
         builder.Logging.AddDebug();
@@ -46,5 +45,7 @@ public static class MauiProgram
         services.AddSingleton<IBarrel>(Barrel.Current);
 
         services.AddSingleton<IApiService, YoutubeService>();
+
+        services.AddSingleton<StartPageViewModel>();
     }
 }
