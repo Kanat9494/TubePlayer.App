@@ -5,6 +5,7 @@
     xmlns:baseviews="clr-namespace:TubePlayer.Views.Base"
     xmlns:viewmodels="clr-namespace:TubePlayer.ViewModels"
     xmlns:models="clr-namespace:TubePlayer.Models"
+    xmlns:controls="clr-namespace:TubePlayer.ViewControls"
     x:TypeArguments="viewmodels:StartPageViewModel"
     x:DataType="viewmodels:StartPageViewModel"
     PageTitle="{Binding Title, Mode=OneWay}"
@@ -29,7 +30,7 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:YoutubeVideo">
-                    <Label Text="{Binding Snippet.Title}" Style="{StaticResource RegularLightText16}"/>
+                    <controls:VideoCell HorizontalOptions="Fill" HeightRequest="200"/>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
