@@ -1,7 +1,13 @@
-﻿namespace TubePlayer.ViewModels;
+﻿using Maui.Apps.Framework.Extensions;
 
-public class StartPageViewModel : AppViewModelBase
+namespace TubePlayer.ViewModels;
+
+public partial class StartPageViewModel : AppViewModelBase
 {
+    private string nextToken = string.Empty;
+    private string searchTerm = "iPhone 14";
+    [ObservableProperty]
+    ObservableCollection<YoutubeVideo> youtubeVideos;
     public StartPageViewModel(IApiService appApiService) : base(appApiService)
     {
         this.Title = "Tube Player";
@@ -9,15 +15,20 @@ public class StartPageViewModel : AppViewModelBase
 
     public override async void OnNavigatedTo(object parameters)
     {
+        Search();
+    }
+
+    private async void Search()
+    {
         SetDataLoadingIndicators(true);
 
         LoadingText = "Подождите, идет загрузка...";
 
+        YoutubeVideos = new();
+
         try
         {
-            await Task.Delay(5000);
-            throw new InternetConnectionException();
-
+            await GetYoutubeVideo();
             this.DataLoaded = true;
         }
         catch (InternetConnectionException iex)
@@ -36,5 +47,19 @@ public class StartPageViewModel : AppViewModelBase
         {
             SetDataLoadingIndicators(false);
         }
+    }
+
+    private async Task GetYoutubeVideo()
+    {
+        var videoSearchResult = await _appApiSerive.SearchVideos(searchTerm, nextToken);
+        nextToken = videoSearchResult.NextPageToken;
+
+        YoutubeVideos.AddRange(videoSearchResult.Items);
+    }
+
+    [RelayCommand]
+    private async void OpenSettingPage()
+    {
+        await PageService.DisplayAlert("Настройки", "Имплементация настроек не предусмотрена в этом проекте", "Ок");
     }
 }

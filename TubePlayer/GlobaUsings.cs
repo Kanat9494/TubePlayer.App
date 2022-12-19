@@ -17,6 +17,10 @@ global using TubePlayer.ViewModels;
 global using TubePlayer.Helpers;
 global using TubePlayer.Views.Base;
 global using Maui.Apps.Framework.Exceptions;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using System.Collections.ObjectModel;
+
+
 
 
 

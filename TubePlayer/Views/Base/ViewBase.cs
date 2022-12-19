@@ -25,7 +25,7 @@ public class ViewBase<TViewModel> : PageBase where TViewModel : AppViewModelBase
             BindingContext = ViewModel = ServiceHelper.GetService<TViewModel>();
 
             ViewModel.NavigationService = this.Navigation;
-            ViewModel.PageSerive = this;
+            ViewModel.PageService = this;
 
             ViewModelInitialized?.Invoke(this, new EventArgs());
 

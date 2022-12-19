@@ -4,17 +4,34 @@
     x:Class="TubePlayer.Views.StartPage"
     xmlns:baseviews="clr-namespace:TubePlayer.Views.Base"
     xmlns:viewmodels="clr-namespace:TubePlayer.ViewModels"
+    xmlns:models="clr-namespace:TubePlayer.Models"
     x:TypeArguments="viewmodels:StartPageViewModel"
     x:DataType="viewmodels:StartPageViewModel"
     PageTitle="{Binding Title, Mode=OneWay}"
     PageMode="Menu" ContentDisplayMode="NavigationBar"
     x:Name="RootPage">
     <baseviews:ViewBase.PageIcons>
-        <ImageButton Style="{StaticResource IconButtonStyle}" Source="icnsettings.png"/>
+        <ImageButton Style="{StaticResource IconButtonStyle}" Source="icnsettings.png"
+            Command="{Binding OpenSettingPageCommand, Mode=OneWay}"/>
     </baseviews:ViewBase.PageIcons>
 
     <baseviews:ViewBase.PageContent>
-        <Label Style="{StaticResource MediumLightText20}" IsVisible="{Binding DataLoaded, Mode=OneWay}"
-            VerticalOptions="Center" HorizontalOptions="Center"/>
+        <CollectionView x:Name="lstVideo" Margin="16,4,16,0" ItemsSource="{Binding YoutubeVideos, Mode=OneWay}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="12"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.Header>
+                <ContentView>
+                    <Label Text="Поле поиска появится здесь!" Style="{StaticResource RegularLightText16}"/>
+                </ContentView>
+            </CollectionView.Header>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:YoutubeVideo">
+                    <Label Text="{Binding Snippet.Title}" Style="{StaticResource RegularLightText16}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </baseviews:ViewBase.PageContent>
 </baseviews:ViewBase>
