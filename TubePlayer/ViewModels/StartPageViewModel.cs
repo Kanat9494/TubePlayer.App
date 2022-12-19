@@ -51,9 +51,23 @@ public partial class StartPageViewModel : AppViewModelBase
 
     private async Task GetYoutubeVideo()
     {
-        var videoSearchResult = await _appApiSerive.SearchVideos(searchTerm, nextToken);
+        //Search the videos
+        var videoSearchResult = await _appApiService.SearchVideos(searchTerm, nextToken);
+
         nextToken = videoSearchResult.NextPageToken;
 
+        //Get Channel URLs
+        var channelIDs = string.Join(",",
+            videoSearchResult.Items.Select(video => video.Snippet.ChannelId).Distinct());
+
+        var channelSearchResult = await _appApiService.GetChannels(channelIDs);
+
+        //Set Channel URL in the Video
+        videoSearchResult.Items.ForEach(video =>
+            video.Snippet.ChannelImageURL = channelSearchResult.Items.Where(channel =>
+                channel.Id == video.Snippet.ChannelId).First().Snippet.Thumbnails.High.Url);
+
+        //Add the Videos for Display
         YoutubeVideos.AddRange(videoSearchResult.Items);
     }
 

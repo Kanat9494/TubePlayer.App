@@ -55,6 +55,7 @@ public class Snippet
 
     [JsonPropertyName("channelTitle")]
     public string ChannelTitle { get; set; }
+    public string ChannelImageURL { get; set; }
 }
 
 public class Thumbnails
@@ -69,4 +70,20 @@ public class Thumbnail
 {
     [JsonPropertyName("url")]
     public string Url { get; set; }
+}
+
+public class ChannelSearchResult
+{
+    [JsonPropertyName("items")]
+    public List<Channel> Items { get; set; }
+}
+
+public class Channel
+{
+    [JsonPropertyName("id")]
+    public string Id { get; set; }
+    [JsonPropertyName("snippet")]
+    public Snippet Snippet { get; set; }
+    //[JsonPropertyName("statistics")]
+    //public Statistics Statistics { get; set; }
 }

@@ -43,6 +43,39 @@
                 ColumnDefinitions="Auto,*,Auto"
                 RowDefinitions="Auto,Auto">
 
+                <Border
+                    WidthRequest="36"
+                    HeightRequest="36"
+                    VerticalOptions="Center"
+                    Stroke="{StaticResource LightBorderColor}"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 18"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="0">
+
+                    <Image
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        WidthRequest="32"
+                        HeightRequest="32">
+
+                        <Image.Clip>
+                            <EllipseGeometry
+                                Center="16,16"
+                                RadiusX="16"
+                                RadiusY="16"/>
+                        </Image.Clip>
+
+                        <Image.Source>
+                            <UriImageSource
+                                Uri="{Binding Snippet.ChannelImageURL, Mode=OneWay}"
+                                CacheValidity="1:00:00.0" />
+                        </Image.Source>
+                    </Image>
+
+                </Border>
+
                 <!-- Channel Name -->
                 <Label
                     Style="{StaticResource MediumLightText18}"

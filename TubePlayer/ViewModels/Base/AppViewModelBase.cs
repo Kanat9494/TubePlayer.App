@@ -5,11 +5,11 @@ public partial class AppViewModelBase : ViewModelBase
     public INavigation NavigationService { get; set; }
     public Page PageService { get; set; }    
 
-    protected IApiService _appApiSerive { get; set; }
+    protected IApiService _appApiService { get; set; }
 
     public AppViewModelBase(IApiService appApiSerive) : base()
     {
-        this._appApiSerive = appApiSerive;
+        this._appApiService = appApiSerive;
     }
 
     [RelayCommand]
