@@ -23,6 +23,10 @@
 	  <Folder Include="Converters\" />
 	  <Folder Include="Helpers\" />
 	  <Folder Include="MVVM\" />
+	  <Folder Include="Converters\" />
+	  <Folder Include="Helpers\" />
+	  <Folder Include="MVVM\" />
+	  <Folder Include="UI\" />
 	  <Folder Include="UI\" />
 	</ItemGroup>
 
