@@ -16,7 +16,7 @@ global using TubePlayer.ViewModels.Base;
 global using TubePlayer.ViewModels;
 global using TubePlayer.Helpers;
 global using TubePlayer.Views.Base;
-
+global using Maui.Apps.Framework.Exceptions;
 
 
 

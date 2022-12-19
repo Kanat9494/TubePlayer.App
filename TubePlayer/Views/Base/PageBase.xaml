@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <basecontrols:ErrorIndicator Grid.Row="2" IsError="{Binding IsErrorState, Mode=OneTime}"
+        <basecontrols:ErrorIndicator Grid.Row="2" IsError="{Binding IsErrorState, Mode=OneWay}"
             ErrorImage="{Binding ErrorImage, Mode=OneWay}" ErrorText="{Binding ErrorMessage, Mode=OneWay}"
             VerticalOptions="Center" HorizontalOptions="Center"/>
 
