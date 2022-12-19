@@ -22,8 +22,6 @@
 	<ItemGroup>
 	  <Folder Include="Helpers\" />
 	  <Folder Include="Helpers\" />
-	  <Folder Include="UI\" />
-	  <Folder Include="UI\" />
 	</ItemGroup>
 
 </Project>

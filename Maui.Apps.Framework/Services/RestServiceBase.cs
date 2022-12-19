@@ -7,10 +7,10 @@ public class RestServiceBase
     private IBarrel _cacheBarrel;
     private IConnectivity _connectivity;
 
-    protected RestServiceBase(IBarrel cacheBarrel, IConnectivity connectivity)
+    protected RestServiceBase(IConnectivity connectivity, IBarrel cacheBarrel)
     {
-        _cacheBarrel = cacheBarrel;
         _connectivity = connectivity;
+        _cacheBarrel = cacheBarrel;
     }
 
     protected void SetBaseURL(string apiBaseUrl)

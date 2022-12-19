@@ -70,22 +70,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Helpers\" />
-	  <Folder Include="IServices\" />
-	  <Folder Include="Models\" />
 	  <Folder Include="IViews\" />
-	  <Folder Include="Helpers\" />
-	  <Folder Include="IServices\" />
 	  <Folder Include="IViews\" />
-	  <Folder Include="Models\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="ViewControls\" />
-	  <Folder Include="Services\" />
 	  <Folder Include="Resources\Styles\" />
 	  <Folder Include="ViewControls\" />
 	  <Folder Include="ViewModels\Base\" />
-	  <Folder Include="Services\" />
 	  <Folder Include="Views\Base\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Maui.Apps.Framework\Maui.Apps.Framework.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
