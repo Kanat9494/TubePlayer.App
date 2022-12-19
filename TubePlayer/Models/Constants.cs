@@ -1,6 +1,4 @@
-﻿using LocalAuthentication;
-
-namespace TubePlayer.Models;
+﻿namespace TubePlayer.Models;
 
 public class Constants
 {

@@ -10,6 +10,7 @@
         <Color x:Key="LightColor">#979797</Color>
         <Color x:Key="DarkTextColor">#151515</Color>
         <Color x:Key="LightTextColor">#F5F5F5</Color>
+        <Color x:Key="LightBorderColor">#A5A5A5</Color>
 
         <!-- Content Page Style -->
         <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
